@@ -11,58 +11,54 @@
 
 #ifndef DRIVERLCD_H
 #define DRIVERLCD_H
-#include <Arduino.h>
-#include <LiquidCrystal.h>
+#include<Arduino.h>
 
 class DriverLcd {
-  private:
-    byte pinos[9];
-  public:
-    DriverLcd(byte pinos[6]);
-    /* ***************************************************************** */
-    /* Method name:        initLcd                                       */
-    /* Method description: Header file containing the functions/methods f*/
-    /*                   initializing and using the ultrassound sensor   */
-    /*Input params:                                                      */
-    /*Output params:                                                     */
-    /* ***************************************************************** */
-    void initLcd();
-    
-    /* ***************************************************************** */
-    /* Method name:        escreveModo                                   */
-    /* Method description: Header file containing the functions/methods f*/
-    /*                   initializing and using the ultrassound sensor   */
-    /*Input params:                                                      */
-    /*Output params:                                                     */
-    /* ***************************************************************** */
-    void escreveModo();//enum
-    
-    /* ***************************************************************** */
-    /* Method name:        escrevBateria                                 */
-    /* Method description: Header file containing the functions/methods f*/
-    /*                   initializing and using the ultrassound sensor   */
-    /*Input params:                                                      */
-    /*Output params:                                                     */
-    /* ***************************************************************** */
-    void escreveBateria(int var2);
-    
-    /* ***************************************************************** */
-    /* Method name:        escreveAlerta                                 */
-    /* Method description: Header file containing the functions/methods f*/
-    /*                   initializing and using the ultrassound sensor   */
-    /*Input params:                                                      */
-    /*Output params:                                                     */
-    /* ***************************************************************** */
-    void escreveAlerta();//enum
-    
-    /* ***************************************************************** */
-    /* Method name:        escreve                                       */
-    /* Method description: Header file containing the functions/methods f*/
-    /*                   initializing and using the ultrassound sensor   */
-    /*Input params:                                                      */
-    /*Output params:                                                     */
-    /* ***************************************************************** */
-    void escreve(String var3);
+private:
+	byte pinos[9];
+public:
+	DriverLcd(byte pinos[6]);
+
+	/* ***************************************************************** */
+	/* Method name:        initLcd                                       */
+	/* Method description: Initializing LCD screen                       */
+	/*Input params:                                                      */
+	/*Output params:                                                     */
+	/* ***************************************************************** */
+	void initLcd();
+
+	/* ***************************************************************** */
+	/* Method name:        escreveModo                                   */
+	/* Method description: Write the mode our robot is working           */
+	/*Input params: enum                                                 */
+	/*Output params:                                                     */
+	/* ***************************************************************** */
+	void escreveModo(); //enum
+
+	/* ***************************************************************** */
+	/* Method name:        escrevBateria                                 */
+	/* Method description: Write the current battery level               */
+	/*Input params: batterylevel                                         */
+	/*Output params:                                                     */
+	/* ***************************************************************** */
+	void escreveBateria(int batterylevel);
+
+	/* ***************************************************************** */
+	/* Method name:        escreveAlerta                                 */
+	/* Method description: Write the alert when battery is about to die  */
+	/*                     or when stuck on loop                         */
+	/*Input params: enum                                                 */
+	/*Output params:                                                     */
+	/* ***************************************************************** */
+	void escreveAlerta(); //enum
+
+	/* ***************************************************************** */
+	/* Method name:        escreve                                       */
+	/* Method description: Write on LCD screen                           */
+	/*Input params: text                                                 */
+	/*Output params:                                                     */
+	/* ***************************************************************** */
+	void escreve(string text);
 };
 
-#endif
+#endif /* DRIVERLCD_H */

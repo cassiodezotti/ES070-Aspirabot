@@ -11,43 +11,41 @@
 
 #ifndef SENSORDISTANCIA_H
 #define SENSORDISTANCIA_H
-#include <Arduino.h>
-#include <Ultrasonic.h>
-
-
+#include<Arduino.h>
+#include<Ultrassonic.h>
 
 class SensorDistancia {
-  private:
-    byte pino1;
-    byte pino2;
-  public:
-    SensorDistancia(byte porta1, byte porta2);
-    /* ***************************************************************** */
-    /* Method name:        initSensor                                    */
-    /* Method description: Header file containing the functions/methods f*/
-    /*                   initializing and using the ultrassound sensor   */
-    /*Input params:                                                      */
-    /*Output params:                                                     */
-    /* ***************************************************************** */
-    void initSensor();    
+private:
+	byte pino1;
+	byte pino2;
+public:
+	SensorDistancia(byte pino1, byte pino2);
 
-    
-    /* ***************************************************************** */
-    /* Method name:        checkDistance                                 */
-    /* Method description: Header file containing the functions/methods f*/
-    /*                   initializing and using the ultrassound sensor   */
-    /*Input params:                                                      */
-    /*Output params:                                                     */
-    /* ***************************************************************** */
-    boolean checkDistance(float distancia);
-    /* ***************************************************************** */
-    /* Method name:        getDistance                                 */
-    /* Method description: Header file containing the functions/methods f*/
-    /*                   initializing and using the ultrassound sensor   */
-    /*Input params:                                                      */
-    /*Output params:                                                     */
-    /* ***************************************************************** */
-    float getDistance();
+	/* ***************************************************************** */
+	/* Method name:        initSensor                                    */
+	/* Method description: Initializing sensor                           */
+	/*Input params:                                                      */
+	/*Output params:                                                     */
+	/* ***************************************************************** */
+	void initSensor();
+
+
+	/* ***************************************************************** */
+	/* Method name:        checkDistance                                 */
+	/* Method description: Compare the distance to the sensor with the   */
+	/*                     value from input                              */
+	/*Input params: var3                                                 */
+	/*Output params: true or false                                       */
+	/* ***************************************************************** */
+	boolean checkDistance(float distancia);
+
+	/* ***************************************************************** */
+	/* Method name:        getDistance                                   */
+	/* Method description: Get distance to the sensor                    */
+	/*Input params:                                                      */
+	/*Output params: distance(float)                                     */
+	/* ***************************************************************** */
+	float getDistance();
 };
 
-#endif
+#endif /* SENSORDISTANCIA_H */

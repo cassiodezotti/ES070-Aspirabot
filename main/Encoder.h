@@ -8,34 +8,33 @@
 /* Creation date:    11out2021                                       */
 /* Revision date:    11out2021                                       */
 /* ***************************************************************** */
+
 #ifndef ENCODER_H
 #define ENCODER_H
-#include <Arduino.h>
+#include<Arduino.h>
 
 class Encoder {
-  private:
-    byte pino1;
-    byte pino2;
-  public:
-    Encoder(byte pino1, byte pino2);
-    /* ***************************************************************** */
-    /* Method name:        initEncoder                                   */
-    /* Method description: Header file containing the functions/methods f*/
-    /*                   initializing and using the ultrassound sensor   */
-    /*Input params:                                                      */
-    /*Output params:                                                     */
-    /* ***************************************************************** */
-    void initEncoder();
+private:
+	byte pino1;
+	byte pino2;
+public:
+	Encoder(byte pino1, byte pino2);
 
-    
-      /* ***************************************************************** */
-      /* Method name:        getVelocity                                   */
-      /* Method description: Header file containing the functions/methods f*/
-      /*                   initializing and using the ultrassound sensor   */
-      /*Input params:                                                      */
-      /*Output params:                                                     */
-      /* ***************************************************************** */
-      float getVelocity();
+	/* ***************************************************************** */
+	/* Method name:        initEncoder                                   */
+	/* Method description: Initializing encoder                          */
+	/*Input params:                                                      */
+	/*Output params:                                                     */
+	/* ***************************************************************** */
+	void initEncoder();
+
+	/* ***************************************************************** */
+	/* Method name:        getVelocity                                   */
+	/* Method description: Get current robot velocity                    */
+	/*Input params:                                                      */
+	/*Output params: velocity(float)                                     */
+	/* ***************************************************************** */
+	float getVelocity();
 };
 
-#endif
+#endif /* ENCODER_H */

@@ -1,3 +1,4 @@
+
 /* ***************************************************************** */
 /* File name:        driverEscovas.h                                 */
 /* File description: Header file containing the functions/methods for*/
@@ -10,44 +11,40 @@
 
 #ifndef DRIVERESCOVAS_H
 #define DRIVERESCOVAS_H
-#include <Arduino.h>
-
+#include<Arduino.h>
 
 class DriverEscovas {
-  private:
-    byte pino1;
-    byte pino2;
-    byte pino3;
-    byte pino4;
-  public:
-    DriverEscovas(byte pino1, byte pino2, byte pino3, byte pino4);
-    /* ***************************************************************** */
-    /* Method name:        initDriver                                    */
-    /* Method description: Header file containing the functions/methods f*/
-    /*                   initializing and using the ultrassound sensor   */
-    /*Input params:                                                      */
-    /*Output params:                                                     */
-    /* ***************************************************************** */
-    void initEscovas();
-    
-    /* ***************************************************************** */
-    /* Method name:        ligaMotores                                   */
-    /* Method description: Header file containing the functions/methods f*/
-    /*                   initializing and using the ultrassound sensor   */
-    /*Input params:                                                      */
-    /*Output params:                                                     */
-    /* ***************************************************************** */
-    void ligaMotores(int motores[2]);
-    
-    /* ***************************************************************** */
-    /* Method name:        desligaMotores                                */
-    /* Method description: Header file containing the functions/methods f*/
-    /*                   initializing and using the ultrassound sensor   */
-    /*Input params:                                                      */
-    /*Output params:                                                     */
-    /* ***************************************************************** */
-    void desligaMotores(int motores[2]);
+private:
+	byte pino1;
+	byte pino2;
+	byte pino3;
+	byte pino4;
+public:
+	DriverEscovas(byte pino1, byte pino2, byte pino3, byte pino4);
 
+	/* ***************************************************************** */
+	/* Method name:        initDriver                                    */
+	/* Method description: initiliazing drivers                          */
+	/*Input params:                                                      */
+	/*Output params:                                                     */
+	/* ***************************************************************** */
+	void initEscovas();
+
+	/* ***************************************************************** */
+	/* Method name:        ligaMotores                                   */
+	/* Method description: Turn on motors                                */
+	/*Input params: var1[2]                                              */
+	/*Output params:                                                     */
+	/* ***************************************************************** */
+	void ligaMotores(int motores[2]);
+
+	/* ***************************************************************** */
+	/* Method name:        desligaMotores                                */
+	/* Method description: Turn off motors                               */
+	/*Input params: var1[2]                                              */
+	/*Output params:                                                     */
+	/* ***************************************************************** */
+	void desligaMotores(int motores[2]);
 };
 
-#endif
+#endif /* DRIVERESCOVAS_H */
