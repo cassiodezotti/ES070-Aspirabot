@@ -14,9 +14,9 @@
 
 class DriverBuzzer {
   private:
-    byte porta;
+    byte pino;
   public:
-    DriverBuzzer(byte porta);
+    DriverBuzzer(byte pino);
     /* ***************************************************************** */
     /* Method name:        initBuzzer                                    */
     /* Method description: Header file containing the functions/methods f*/
@@ -24,7 +24,7 @@ class DriverBuzzer {
     /*Input params:                                                      */
     /*Output params:                                                     */
     /* ***************************************************************** */
-    void initBuzzer(int var1);
+    void initBuzzer();
     
     /* ***************************************************************** */
     /* Method name:        tocarAlarme                                   */

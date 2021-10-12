@@ -12,14 +12,16 @@
 #ifndef SENSORDISTANCIA_H
 #define SENSORDISTANCIA_H
 #include <Arduino.h>
+#include <Ultrasonic.h>
 
 
 
 class SensorDistancia {
   private:
-    byte porta;
+    byte pino1;
+    byte pino2;
   public:
-    SensorDistancia(byte porta);
+    SensorDistancia(byte porta1, byte porta2);
     /* ***************************************************************** */
     /* Method name:        initSensor                                    */
     /* Method description: Header file containing the functions/methods f*/
@@ -27,7 +29,7 @@ class SensorDistancia {
     /*Input params:                                                      */
     /*Output params:                                                     */
     /* ***************************************************************** */
-    void initSensor(int var1, int var2);    
+    void initSensor();    
 
     
     /* ***************************************************************** */
@@ -37,7 +39,7 @@ class SensorDistancia {
     /*Input params:                                                      */
     /*Output params:                                                     */
     /* ***************************************************************** */
-    boolean checkDistance(float var3);
+    boolean checkDistance(float distancia);
     /* ***************************************************************** */
     /* Method name:        getDistance                                 */
     /* Method description: Header file containing the functions/methods f*/

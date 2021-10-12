@@ -12,12 +12,13 @@
 #ifndef DRIVERLCD_H
 #define DRIVERLCD_H
 #include <Arduino.h>
+#include <LiquidCrystal.h>
 
 class DriverLcd {
   private:
-    byte porta;
+    byte pinos[9];
   public:
-    DriverLcd(byte porta);
+    DriverLcd(byte pinos[6]);
     /* ***************************************************************** */
     /* Method name:        initLcd                                       */
     /* Method description: Header file containing the functions/methods f*/
@@ -25,7 +26,7 @@ class DriverLcd {
     /*Input params:                                                      */
     /*Output params:                                                     */
     /* ***************************************************************** */
-    void initLcd(int var1[11]);
+    void initLcd();
     
     /* ***************************************************************** */
     /* Method name:        escreveModo                                   */

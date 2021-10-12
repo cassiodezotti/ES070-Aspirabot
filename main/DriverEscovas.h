@@ -15,9 +15,12 @@
 
 class DriverEscovas {
   private:
-    byte porta;
+    byte pino1;
+    byte pino2;
+    byte pino3;
+    byte pino4;
   public:
-    DriverEscovas(byte porta);
+    DriverEscovas(byte pino1, byte pino2, byte pino3, byte pino4);
     /* ***************************************************************** */
     /* Method name:        initDriver                                    */
     /* Method description: Header file containing the functions/methods f*/
@@ -25,7 +28,7 @@ class DriverEscovas {
     /*Input params:                                                      */
     /*Output params:                                                     */
     /* ***************************************************************** */
-    void initEscovas(int var1, int var2, int var3, int var4);
+    void initEscovas();
     
     /* ***************************************************************** */
     /* Method name:        ligaMotores                                   */
@@ -34,7 +37,7 @@ class DriverEscovas {
     /*Input params:                                                      */
     /*Output params:                                                     */
     /* ***************************************************************** */
-    void ligaMotores(int var1[2]);
+    void ligaMotores(int motores[2]);
     
     /* ***************************************************************** */
     /* Method name:        desligaMotores                                */
@@ -43,7 +46,7 @@ class DriverEscovas {
     /*Input params:                                                      */
     /*Output params:                                                     */
     /* ***************************************************************** */
-    void desligaMotores(int var1[2]);
+    void desligaMotores(int motores[2]);
 
 };
 

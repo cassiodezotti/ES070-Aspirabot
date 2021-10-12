@@ -8,15 +8,19 @@
 /* Revision date:    11out2021                                       */
 /* ***************************************************************** */
 
+
+
+// Pensando melhor acho que não existe a necessidade dessa classe, era somente um init 
+
 #ifndef DRIVERHG7881_H
 #define DRIVERHG7881_H
 #include <Arduino.h>
 
 class DriverHG7881 {
   private:
-    byte porta;
+    byte pino;
   public:
-    DriverHG7881(byte porta);
+    DriverHG7881(byte pino);
     /* ***************************************************************** */
     /* Method name:        initDriver                                    */
     /* Method description: Header file containing the functions/methods f*/

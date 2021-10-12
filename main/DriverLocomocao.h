@@ -15,9 +15,12 @@
 
 class DriverLocomocao {
   private:
-    byte porta;
+    byte pino1;
+    byte pino2;
+    byte pino3;
+    byte pino4;
   public:
-    DriverLocomocao(byte porta);
+    DriverLocomocao(byte pino1, byte pino2, byte pino3, byte pino4);
     /* ***************************************************************** */
     /* Method name:        initDriver                                    */
     /* Method description: Header file containing the functions/methods f*/
@@ -25,7 +28,7 @@ class DriverLocomocao {
     /*Input params:                                                      */
     /*Output params:                                                     */
     /* ***************************************************************** */
-    void initLocomocao(int var1, int var2, int var3, int var4);
+    void initLocomocao();
 
     /* ***************************************************************** */
     /* Method name:        moverTras                                     */

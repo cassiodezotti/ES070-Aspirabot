@@ -14,9 +14,10 @@
 
 class Encoder {
   private:
-    byte porta;
+    byte pino1;
+    byte pino2;
   public:
-    Encoder(byte porta);
+    Encoder(byte pino1, byte pino2);
     /* ***************************************************************** */
     /* Method name:        initEncoder                                   */
     /* Method description: Header file containing the functions/methods f*/
@@ -24,7 +25,7 @@ class Encoder {
     /*Input params:                                                      */
     /*Output params:                                                     */
     /* ***************************************************************** */
-    void initEncoder(int var1, int var2);
+    void initEncoder();
 
     
       /* ***************************************************************** */
