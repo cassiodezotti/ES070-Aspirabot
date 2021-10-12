@@ -33,7 +33,7 @@ public:
 	/*Input params:                                                      */
 	/*Output params: battery level(int)                                  */
 	/* ***************************************************************** */
-	int getNivelBateria(void);
+	int getNivelBateria();
 
 	/* ***************************************************************** */
 	/* Method name:        checkAlertaBateria                            */
@@ -41,7 +41,7 @@ public:
 	/*Input params:                                                      */
 	/*Output params: distance(float)                                     */
 	/* ***************************************************************** */
-	boolean checkAlertaBateria(void);
+	boolean checkAlertaBateria();
 };
 
 #endif /* BATERIA_H */
