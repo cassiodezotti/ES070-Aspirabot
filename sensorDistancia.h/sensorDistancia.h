@@ -32,3 +32,4 @@ void initSensor(int var1, int var2);
 boolean checkDistance(float var3);
 
 #endif /* SENSORDISTANCIA_H */
+
