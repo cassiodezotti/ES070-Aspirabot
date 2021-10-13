@@ -23,8 +23,8 @@ public:
 	DriverEscovas(byte pino1, byte pino2, byte pino3, byte pino4);
 
 	/* ***************************************************************** */
-	/* Method name:        initDriver                                    */
-	/* Method description: initiliazing drivers                          */
+	/* Method name:        initEscovas                                   */
+	/* Method description: initiliazing brushes                          */
 	/*Input params:                                                      */
 	/*Output params:                                                     */
 	/* ***************************************************************** */
