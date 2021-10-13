@@ -35,7 +35,7 @@ class DriverLcd {
     /*Input params:                                                      */
     /*Output params:                                                     */
     /* ***************************************************************** */
-    void escreveModo();//enum
+    void escreveModo();// vamos testar enum depois 
     
     /* ***************************************************************** */
     /* Method name:        escrevBateria                                 */
@@ -53,7 +53,7 @@ class DriverLcd {
     /*Input params:                                                      */
     /*Output params:                                                     */
     /* ***************************************************************** */
-    void escreveAlerta();//enum
+    void escreveAlerta();// vamos testar enum depois 
     
     /* ***************************************************************** */
     /* Method name:        escreve                                       */
