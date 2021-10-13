@@ -1,47 +1,48 @@
-
 /* ***************************************************************** */
-/* File name:        driverBuzzer.h                                  */
+/* File name:        bateria.h                                       */
 /* File description: Header file containing the functions/methods for*/
-/*                   initializing and using the buzzer               */
-/* Author name:      AndrÃ© Won, Cassio Dezzoti, TotmÃ©s Scheffer,     */
+/*                   initializing and using the battery              */
+/* Author name:      André Won, Cassio Dezzoti, Totmés Scheffer,     */
 /*                   Guilherme Abreu                                 */
 /* Creation date:    11out2021                                       */
 /* Revision date:    11out2021                                       */
 /* ***************************************************************** */
 
-#ifndef DRIVERBUZZER_H
-#define DRIVERBUZZER_H
-#include<arduino.h>
+#ifndef BATERIA_H
+#define BATERIA_H
+#include<Arduino.h>
 
-class DriverBuzzer {
+class Bateria {
 private:
 	byte pino;
 public:
-	DriverBuzzer(byte pino);
+	Bateria(byte pino);
 
 	/* ***************************************************************** */
-	/* Method name:        initBuzzer                                    */
-	/* Method description: Initializing the buzzer                       */
+	/* Method name:        initLeitorBateria                             */
+	/* Method description: Initializing battery sensor                   */
 	/*Input params:                                                      */
 	/*Output params:                                                     */
 	/* ***************************************************************** */
-	void initBuzzer();
+	void initLeitorBateria();
+
 
 	/* ***************************************************************** */
-	/* Method name:        tocarAlarme                                   */
-	/* Method description: Start playing the buzzer                      */
+	/* Method name:        getNivelBateria                               */
+	/* Method description: Get the current battery level                 */
 	/*Input params:                                                      */
-	/*Output params:                                                     */
+	/*Output params: battery level(int)                                  */
 	/* ***************************************************************** */
-	void tocarAlarme();
+	int getNivelBateria();
 
 	/* ***************************************************************** */
-	/* Method name:        pararAlarme                                   */
-	/* Method description: Stop playing the buzzer                       */
+	/* Method name:        checkAlertaBateria                            */
+	/* Method description: Check battery level alert                     */
 	/*Input params:                                                      */
-	/*Output params:                                                     */
+	/*Output params: distance(float)                                     */
 	/* ***************************************************************** */
-	void pararAlarme();
-}
+	boolean checkAlertaBateria();
+};
 
-#endif /* DRIVERBUZZER_H */
+#endif /* BATERIA_H */
+
