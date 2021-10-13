@@ -59,7 +59,7 @@ public:
 	/*Input params: text                                                 */
 	/*Output params:                                                     */
 	/* ***************************************************************** */
-	void escreve(string text);
+	void escreve(String text);
 };
 
 #endif /* DRIVERLCD_H */

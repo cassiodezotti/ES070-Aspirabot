@@ -1,15 +1,15 @@
-#include <Bateria.h>
+#include "Bateria.h"
 
-Bateria: : Bateria(byte pino) {
+Bateria:: Bateria(byte pino) {
 	this->pino = pino;
 
 	void initLeitorBateria();
 }
 
-int getNivelBateria : : getNivelBateria() {
+int Bateria:: getNivelBateria() {
 	return 0;
 }
 
-boolean checkAlertaBateria : : chechAlertaBateria() {
+boolean Bateria:: checkAlertaBateria() {
 	return false;
 }

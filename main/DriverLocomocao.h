@@ -20,7 +20,7 @@ private:
 	byte pino3;
 	byte pino4;
 public:
-	DriverLocomocao(byte pino1, byte pino2, byte pino3, byte pino4)
+	DriverLocomocao(byte pino1, byte pino2, byte pino3, byte pino4);
 
 	/* ***************************************************************** */
 	/* Method name:        initLocomocao                                 */

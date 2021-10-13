@@ -1,4 +1,3 @@
-
 /* ***************************************************************** */
 /* File name:        driverBuzzer.h                                  */
 /* File description: Header file containing the functions/methods for*/
@@ -11,7 +10,7 @@
 
 #ifndef DRIVERBUZZER_H
 #define DRIVERBUZZER_H
-#include<arduino.h>
+#include <Arduino.h>
 
 class DriverBuzzer {
 private:
@@ -42,6 +41,6 @@ public:
 	/*Output params:                                                     */
 	/* ***************************************************************** */
 	void pararAlarme();
-}
+};
 
 #endif /* DRIVERBUZZER_H */

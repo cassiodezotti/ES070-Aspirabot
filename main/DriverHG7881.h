@@ -13,7 +13,7 @@
 #define DRIVERHG7881_H
 #include<Arduino.h>
 
-class DriverHG788 {
+class DriverHG7881 {
 private:
 	byte pino;
 public:
