@@ -36,7 +36,7 @@ public:
 	/*Input params: var1[2]                                              */
 	/*Output params:                                                     */
 	/* ***************************************************************** */
-	void ligaMotores(int motores[2]);
+	void ligaMotores();
 
 	/* ***************************************************************** */
 	/* Method name:        desligaMotores                                */
@@ -44,7 +44,7 @@ public:
 	/*Input params: var1[2]                                              */
 	/*Output params:                                                     */
 	/* ***************************************************************** */
-	void desligaMotores(int motores[2]);
+	void desligaMotores();
 };
 
 #endif /* DRIVERESCOVAS_H */
