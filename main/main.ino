@@ -14,7 +14,7 @@
 //SensorDistancia sensorFrontal(1,1);
 //SensorDistancia sensorDireito(1,1);
 DriverLocomocao motoresLocomocao(5,6,10,11);
-DriverEscovas motoresEscovas(3,4,8,9);
+DriverEscovas motoresEscovas(4,3,8,9);
 //DriverBuzzer buzzer(1);
 //DriverLcd lcd(pinosLcd);
 //Bateria bateriaSistema(1,2);
@@ -39,10 +39,10 @@ void loop() {
   delay(1000);
   motoresLocomocao.parar();
   delay(1000);
-  motoresEscovas.ligaMotores();
-  delay(2000);
-  motoresEscovas.desligaMotores();
-  delay(1000);
+//  motoresEscovas.ligaMotores();
+//  delay(2000);
+//  motoresEscovas.desligaMotores();
+//  delay(1000);
 }
 
 void iniciarPlaca() {

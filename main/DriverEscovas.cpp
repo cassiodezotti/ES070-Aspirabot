@@ -31,8 +31,8 @@ void DriverEscovas:: ligaMotores(){
 }
 
 void DriverEscovas:: desligaMotores(){
-  analogWrite(pino1, LOW);
-  analogWrite(pino2, LOW);
-  analogWrite(pino3, LOW);
-  analogWrite(pino4, LOW);
+  analogWrite(pino1, 0);
+  analogWrite(pino2, 0);
+  analogWrite(pino3, 0);
+  analogWrite(pino4, 0);
 }
