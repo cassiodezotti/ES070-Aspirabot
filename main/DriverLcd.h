@@ -12,13 +12,15 @@
 #ifndef DRIVERLCD_H
 #define DRIVERLCD_H
 #include<Arduino.h>
-#include <LiquidCrystal.h>
+#include <Wire.h> 
+#include <LiquidCrystal_I2C.h>
 
 class DriverLcd {
 private:
-	byte pinos[6];
+LiquidCrystal_I2C lcd(0x20,16,2);
+
 public:
-	DriverLcd(byte pinos[6]);
+
 
 	/* ***************************************************************** */
 	/* Method name:        initLcd                                       */
@@ -34,7 +36,7 @@ public:
 	/*Input params: enum                                                 */
 	/*Output params:                                                     */
 	/* ***************************************************************** */
-	void escreveModo(); //enum
+	void escreveModo(int modoOperacao); //enum
 
 	/* ***************************************************************** */
 	/* Method name:        escreveBateria                                 */
@@ -53,13 +55,7 @@ public:
 	/* ***************************************************************** */
 	void escreveAlerta(); //enum
 
-	/* ***************************************************************** */
-	/* Method name:        escreve                                       */
-	/* Method description: Write on LCD screen                           */
-	/*Input params: text                                                 */
-	/*Output params:                                                     */
-	/* ***************************************************************** */
-	void escreve(String text);
+
 };
 
 #endif /* DRIVERLCD_H */

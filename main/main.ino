@@ -16,11 +16,11 @@ SensorDistancia sensorDireito(1,1);
 DriverLocomocao motoresLocomocao(1,2,3,4);
 DriverEscovas motoresEscovas(1,2,3,4);
 DriverBuzzer buzzer(1);
-DriverLcd lcd(pinosLcd);
+DriverLcd lcd;
 //Bateria bateriaSistema(1,2);
 int objetosDetectados = 0;
 float distanciaMin = 0.0;
-int aletaAtual = 0;
+int alertaAtual = 0;
 int modoOperacao; //Depois será testado com enum
 
 
