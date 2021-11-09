@@ -19,5 +19,9 @@ int Bateria:: getNivelBateria() {
 }
 
 boolean Bateria:: checkAlertaBateria() {
+	if (getNivelBateria() <= 20){
+	return true;
+	}else{
 	return false;
+	}
 }
