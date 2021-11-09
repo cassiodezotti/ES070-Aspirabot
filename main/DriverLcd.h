@@ -15,10 +15,9 @@
 #include <LiquidCrystal.h>
 
 class DriverLcd {
-private:
-	byte pinos[6];
+
 public:
-	DriverLcd(byte pinos[6]);
+	DriverLcd();
 
 	/* ***************************************************************** */
 	/* Method name:        initLcd                                       */
@@ -53,13 +52,6 @@ public:
 	/* ***************************************************************** */
 	void escreveAlerta(); //enum
 
-	/* ***************************************************************** */
-	/* Method name:        escreve                                       */
-	/* Method description: Write on LCD screen                           */
-	/*Input params: text                                                 */
-	/*Output params:                                                     */
-	/* ***************************************************************** */
-	void escreve(String text);
 };
 
 #endif /* DRIVERLCD_H */
