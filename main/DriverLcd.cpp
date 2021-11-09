@@ -3,7 +3,7 @@
 #include <Wire.h> 
 #include <LiquidCrystal_I2C.h>
 
-DriverLcd:: DriverLcd(byte pinos[6]) {
+DriverLcd:: DriverLcd() {
   void initLcd();
 }
 
