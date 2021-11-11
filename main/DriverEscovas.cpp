@@ -24,15 +24,15 @@ void DriverEscovas:: initEscovas(){
 }
 
 void DriverEscovas:: ligaMotores(){
-  analogWrite(pino1, 255);
-  analogWrite(pino2, 0);
-  analogWrite(pino3, 255);
+  analogWrite(pino1, 0);
+  analogWrite(pino2, 210);
+  analogWrite(pino3, 210);
   analogWrite(pino4, 0);
 }
 
 void DriverEscovas:: desligaMotores(){
-  analogWrite(pino1, 0);
-  analogWrite(pino2, 0);
-  analogWrite(pino3, 0);
-  analogWrite(pino4, 0);
+  digitalWrite(pino1, LOW);
+  digitalWrite(pino2, LOW);
+  digitalWrite(pino3, LOW);
+  digitalWrite(pino4, LOW);
 }

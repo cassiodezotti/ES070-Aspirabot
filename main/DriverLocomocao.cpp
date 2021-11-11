@@ -24,9 +24,9 @@ void DriverLocomocao:: initLocomocao(){
 
 boolean DriverLocomocao:: moverFrente(){
   //toda velocidade
-  analogWrite(pino1, 255);
+  analogWrite(pino1, 210);
   analogWrite(pino2, 0);
-  analogWrite(pino3, 255);
+  analogWrite(pino3, 210);
   analogWrite(pino4, 0);
   //falta a parte do encoder
   return false;
@@ -34,18 +34,18 @@ boolean DriverLocomocao:: moverFrente(){
 
 boolean DriverLocomocao:: moverTras(){
   analogWrite(pino1, 0);
-  analogWrite(pino2, 255);
+  analogWrite(pino2, 210);
   analogWrite(pino3, 0);
-  analogWrite(pino4, 255);
+  analogWrite(pino4, 210);
   
   return false;
 }
 
 void DriverLocomocao:: parar(){
-  analogWrite(pino1, 0);
-  analogWrite(pino2, 0);
-  analogWrite(pino3, 0);
-  analogWrite(pino4, 0);
+  digitalWrite(pino1, LOW);
+  digitalWrite(pino2, LOW);
+  digitalWrite(pino3, LOW);
+  digitalWrite(pino4, LOW);
   
 }
 
