@@ -12,7 +12,7 @@ void Bateria:: initLeitorBateria(){
 
 int Bateria:: getNivelBateria() {
 	int sensorBateria = analogRead(pino);
-	float fnivelBateria = (sensorBateria/1023.0);
+	float fnivelBateria = (sensorBateria*100/1023.0);
 	int inivelBateria = (int) fnivelBateria;
 	
 	return inivelBateria;
