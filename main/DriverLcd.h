@@ -12,45 +12,48 @@
 #ifndef DRIVERLCD_H
 #define DRIVERLCD_H
 #include<Arduino.h>
-#include <LiquidCrystal.h>
+#include <LiquidCrystal_I2C.h>
 
 class DriverLcd {
+  private:
+    
+    byte pino1;
+    byte pino2;
+  public:
+    DriverLcd(byte pino1, byte pino2);
 
-public:
-	DriverLcd();
+    /* ***************************************************************** */
+    /* Method name:        initLcd                                       */
+    /* Method description: Initializing LCD screen                       */
+    /*Input params:                                                      */
+    /*Output params:                                                     */
+    /* ***************************************************************** */
+    void initLcd();
 
-	/* ***************************************************************** */
-	/* Method name:        initLcd                                       */
-	/* Method description: Initializing LCD screen                       */
-	/*Input params:                                                      */
-	/*Output params:                                                     */
-	/* ***************************************************************** */
-	void initLcd();
+    /* ***************************************************************** */
+    /* Method name:        escreveModo                                   */
+    /* Method description: Write the mode our robot is working           */
+    /*Input params: enum                                                 */
+    /*Output params:                                                     */
+    /* ***************************************************************** */
+    void escreveModo(int modoOperacao); //enum
 
-	/* ***************************************************************** */
-	/* Method name:        escreveModo                                   */
-	/* Method description: Write the mode our robot is working           */
-	/*Input params: enum                                                 */
-	/*Output params:                                                     */
-	/* ***************************************************************** */
-	void escreveModo(); //enum
+    /* ***************************************************************** */
+    /* Method name:        escreveBateria                                 */
+    /* Method description: Write the current battery level               */
+    /*Input params: batterylevel                                         */
+    /*Output params:                                                     */
+    /* ***************************************************************** */
+    void escreveBateria(int batterylevel);
 
-	/* ***************************************************************** */
-	/* Method name:        escreveBateria                                 */
-	/* Method description: Write the current battery level               */
-	/*Input params: batterylevel                                         */
-	/*Output params:                                                     */
-	/* ***************************************************************** */
-	void escreveBateria(int batterylevel);
-
-	/* ***************************************************************** */
-	/* Method name:        escreveAlerta                                 */
-	/* Method description: Write the alert when battery is about to die  */
-	/*                     or when stuck on loop                         */
-	/*Input params: enum                                                 */
-	/*Output params:                                                     */
-	/* ***************************************************************** */
-	void escreveAlerta(); //enum
+    /* ***************************************************************** */
+    /* Method name:        escreveAlerta                                 */
+    /* Method description: Write the alert when battery is about to die  */
+    /*                     or when stuck on loop                         */
+    /*Input params: enum                                                 */
+    /*Output params:                                                     */
+    /* ***************************************************************** */
+    void escreveAlerta(); //enum
 
 };
 
