@@ -16,9 +16,8 @@
 #include <LiquidCrystal_I2C.h>
 
 class DriverLcd {
-private:
-LiquidCrystal_I2C lcd(0x20,16,2);
-
+  
+LiquidCrystal_I2C lcd = LiquidCrystal_I2C(0x27,16,2);
 public:
 
 
