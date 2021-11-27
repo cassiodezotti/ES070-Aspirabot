@@ -10,7 +10,7 @@
 
 //Portas só para ilustrar, o planejamento das portas será feito depois
 //byte pinosLcd[6] = {1,2,3,4,5,6};
-//SensorDistancia sensorEsquerda(1,1);
+SensorDistancia sensorEsquerda(11,12);
 //SensorDistancia sensorFrontal(1,1);
 //SensorDistancia sensorDireito(1,1);
 //DriverLocomocao motoresLocomocao(1,2,3,4);
@@ -27,6 +27,8 @@ int modoOperacao; //Depois será testado com enum
 void setup() {
   // put your setup code here, to run once:
   pinMode(13,INPUT_PULLUP);
+  pinMode(11,INPUT);
+  pinMode(12,OUTPUT);
 }
 
 void loop() {
@@ -36,6 +38,11 @@ void loop() {
   }else{
     buzzer.pararAlarme();
   }
+  
+  float distancia;
+  distancia = sensorEsquerda.getDistance();
+  Serial.println(distancia);
+  delay(500).
   
 }
 
