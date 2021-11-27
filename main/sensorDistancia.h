@@ -12,7 +12,6 @@
 #ifndef SENSORDISTANCIA_H
 #define SENSORDISTANCIA_H
 #include<Arduino.h>
-#include "Ultrasonic.h"
 
 class SensorDistancia {
 private:

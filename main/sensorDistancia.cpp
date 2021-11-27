@@ -1,4 +1,3 @@
-#include "Ultrasonic.h"
 #include "sensorDistancia.h"
 #include<Arduino.h> 
 
@@ -11,7 +10,11 @@ SensorDistancia:: SensorDistancia(byte pino1, byte pino2) {
 
 
 void SensorDistancia:: initSensor(){
-  Ultrasonic ultrasonic(pino1,pino2);
+  pinMode(pino1,INPUT);   // Echo
+  pinMode(pino2,OUTPUT);  // Trigger
+
+  digitalWrite(pino1,LOW);
+  digitalWrite(pino2,LOW);
 }
 
 boolean SensorDistancia:: checkDistance(float distancia){
@@ -25,9 +28,21 @@ boolean SensorDistancia:: checkDistance(float distancia){
 }
 
 float SensorDistancia:: getDistance(){
-	float distancia;
 
-  distancia = ultrasonic.read(CM);
+  float tempo;
+
+  digitalWrite(pino2,LOW);
+  delayMicroseconds(5);
+  digitalWrite(pino2, HIGH);
+  delayMicroseconds(10);
+  digitalWrite(pino2,LOW);
+
+  digitalWrite(pino1,LOW);
+  tempo = pulseIn(pino1,HIGH);
+
+  float dist;
+  dist = 100*(tempo*0.00034029)/2;
   
-  return distancia;
+  return dist;
+  
 }
