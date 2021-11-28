@@ -1,4 +1,5 @@
 
+
 /* ***************************************************************** */
 /* File name:        encoder.h                                       */
 /* File description: Header file containing the functions/methods for*/
@@ -45,3 +46,4 @@ public:
 };
 
 #endif /* ENCODER_H */
+

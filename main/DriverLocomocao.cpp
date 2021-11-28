@@ -1,3 +1,4 @@
+
 #include "DriverLocomocao.h"
 
 DriverLocomocao:: DriverLocomocao(byte pino1, byte pino2, byte pino3, byte pino4) {
@@ -24,7 +25,7 @@ void DriverLocomocao:: initLocomocao(){
 
 boolean DriverLocomocao:: moverFrente(){
   //toda velocidade
-  analogWrite(pino1, 210);
+  analogWrite(pino1, 240);
   analogWrite(pino2, 0);
   analogWrite(pino3, 210);
   analogWrite(pino4, 0);
@@ -34,7 +35,7 @@ boolean DriverLocomocao:: moverFrente(){
 
 boolean DriverLocomocao:: moverTras(){
   analogWrite(pino1, 0);
-  analogWrite(pino2, 210);
+  analogWrite(pino2, 240);
   analogWrite(pino3, 0);
   analogWrite(pino4, 210);
   
@@ -49,10 +50,20 @@ void DriverLocomocao:: parar(){
   
 }
 
+
+
 boolean DriverLocomocao:: virarDireita(){
+  analogWrite(pino1, 0);
+  analogWrite(pino2, 0);
+  analogWrite(pino3, 210);
+  analogWrite(pino4, 0);
   return false;
 }
 
 boolean DriverLocomocao:: virarEsquerda(){
+  analogWrite(pino1, 240);
+  analogWrite(pino2, 0);
+  analogWrite(pino3, 0);
+  analogWrite(pino4, 0);
   return false;
 }

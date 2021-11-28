@@ -1,4 +1,5 @@
 
+
 /* ***************************************************************** */
 /* File name:        driverEscovas.h                                 */
 /* File description: Header file containing the functions/methods for*/
@@ -23,8 +24,8 @@ public:
 	DriverEscovas(byte pino1, byte pino2, byte pino3, byte pino4);
 
 	/* ***************************************************************** */
-	/* Method name:        initEscovas                                   */
-	/* Method description: initiliazing brushes                          */
+	/* Method name:        initDriver                                    */
+	/* Method description: initiliazing drivers                          */
 	/*Input params:                                                      */
 	/*Output params:                                                     */
 	/* ***************************************************************** */
@@ -33,7 +34,7 @@ public:
 	/* ***************************************************************** */
 	/* Method name:        ligaMotores                                   */
 	/* Method description: Turn on motors                                */
-	/*Input params:                                                      */
+	/*Input params: var1[2]                                              */
 	/*Output params:                                                     */
 	/* ***************************************************************** */
 	void ligaMotores();
@@ -41,10 +42,11 @@ public:
 	/* ***************************************************************** */
 	/* Method name:        desligaMotores                                */
 	/* Method description: Turn off motors                               */
-	/*Input params:                                                      */
+	/*Input params: var1[2]                                              */
 	/*Output params:                                                     */
 	/* ***************************************************************** */
 	void desligaMotores();
 };
 
 #endif /* DRIVERESCOVAS_H */
+
