@@ -46,6 +46,14 @@ public:
 	/* ***************************************************************** */
 	boolean moverFrente();
 
+  /* ***************************************************************** */
+  /* Method name:        parar                                         */
+  /* Method description: stop robot from moving                        */
+  /*Input params:                                                      */
+  /*Output params:                                                     */
+  /* ***************************************************************** */
+  void parar();
+
 	/* ***************************************************************** */
 	/* Method name:        virarDireita                                  */
 	/* Method description: Turn robot to the right                       */

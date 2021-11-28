@@ -1,28 +1,44 @@
 #include "DriverLcd.h"
-
-DriverLcd:: DriverLcd(byte pinos[6]) {
-  for (int i = 0; i < 6; i = i + 1){
-     this->pinos[i] = pinos[i];
-  }
-
-  void initLcd();
-}
+#include <Arduino.h>
+#include <Wire.h> 
+#include <LiquidCrystal_I2C.h>
 
 
-void DriverLcd:: initLcd(){
-  LiquidCrystal lcd(pinos[0], pinos[1], pinos[2], pinos[3], pinos[4], pinos[5]);
-  lcd.begin(16,2);
+void DriverLcd:: initLcd(){  
+  lcd.init();
+  lcd.backlight();
+  lcd.setCursor(0,0);
+  lcd.print("Welcome,");
+  lcd.setCursor(0,1);
+  lcd.print("We are Aspirabot!");
+  delay(2000);
+  lcd.clear(); 
+  lcd.setCursor(0, 0);            // selecionando coluna 2 e linha 1
+  lcd.print("Modo:");       // Print da mensagem
   
 }
 
-void DriverLcd:: escreveModo(){
-  
+void DriverLcd:: escreveModo(int modoOperacao){
+  if(modoOperacao == HIGH){
+        lcd.setCursor(0, 1);            // selecionando coluna 2 e linha 1
+        lcd.print("Seguidor Parede");       // Print da mensagem
+        delay(100);                    // atraso de 1 segundo
+      } else {
+        lcd.setCursor(0, 1);            // selecionando coluna 2 e linha 1
+        lcd.print("Aleatorio      ");       // Print da mensagem
+        delay(100);                    // atraso de 1 segundo
+      }
 }
 
 void DriverLcd:: escreveAlerta(){
   
+  lcd.setCursor(0, 1);            // selecionando coluna 2 e linha 1
+  lcd.print("    ALERTA");       // Print da mensagem
+  delay(500);                    // atraso de 1 segundo
 }
 
-void DriverLcd:: escreve(String var3) {
-  
-}
+//void escreveBateria(int batteryLevel){
+//    lcd.setCursor(0, 11);
+//    lcd.print(batteryLevel);
+//    lcd.print("%"); 
+//  }

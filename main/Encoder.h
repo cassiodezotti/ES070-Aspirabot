@@ -16,9 +16,8 @@
 class Encoder {
 private:
 	byte pino1;
-	byte pino2;
 public:
-	Encoder(byte pino1, byte pino2);
+	Encoder(byte pino1);
 
 	/* ***************************************************************** */
 	/* Method name:        initEncoder                                   */
@@ -35,6 +34,14 @@ public:
 	/*Output params: velocity(float)                                     */
 	/* ***************************************************************** */
 	float getVelocity();
+
+  /* ***************************************************************** */
+  /* Method name:        isMoving                                      */
+  /* Method description: return true if motor is moving                */
+  /*Input params:                                                      */
+  /*Output params: Boolean(float)                                      */
+  /* ***************************************************************** */
+  boolean isMoving();
 };
 
 #endif /* ENCODER_H */

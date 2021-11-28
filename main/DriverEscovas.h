@@ -33,18 +33,18 @@ public:
 	/* ***************************************************************** */
 	/* Method name:        ligaMotores                                   */
 	/* Method description: Turn on motors                                */
-	/*Input params: var1[2]                                              */
+	/*Input params:                                                      */
 	/*Output params:                                                     */
 	/* ***************************************************************** */
-	void ligaMotores(int motores[2]);
+	void ligaMotores();
 
 	/* ***************************************************************** */
 	/* Method name:        desligaMotores                                */
 	/* Method description: Turn off motors                               */
-	/*Input params: var1[2]                                              */
+	/*Input params:                                                      */
 	/*Output params:                                                     */
 	/* ***************************************************************** */
-	void desligaMotores(int motores[2]);
+	void desligaMotores();
 };
 
 #endif /* DRIVERESCOVAS_H */

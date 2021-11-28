@@ -1,3 +1,4 @@
+
 /* ***************************************************************** */
 /* File name:        driverBuzzer.h                                  */
 /* File description: Header file containing the functions/methods for*/
@@ -10,7 +11,7 @@
 
 #ifndef DRIVERBUZZER_H
 #define DRIVERBUZZER_H
-#include <Arduino.h>
+#include<Arduino.h>
 
 class DriverBuzzer {
 private:
@@ -21,24 +22,24 @@ public:
 	/* ***************************************************************** */
 	/* Method name:        initBuzzer                                    */
 	/* Method description: Initializing the buzzer                       */
-	/*Input params:                                                      */
-	/*Output params:                                                     */
+	/*Input params: n/a                                                  */
+	/*Output params: n/a                                                 */
 	/* ***************************************************************** */
 	void initBuzzer();
 
 	/* ***************************************************************** */
 	/* Method name:        tocarAlarme                                   */
 	/* Method description: Start playing the buzzer                      */
-	/*Input params:                                                      */
-	/*Output params:                                                     */
+	/*Input params: n/a                                                  */
+	/*Output params: n/a                                                 */
 	/* ***************************************************************** */
 	void tocarAlarme();
 
 	/* ***************************************************************** */
 	/* Method name:        pararAlarme                                   */
 	/* Method description: Stop playing the buzzer                       */
-	/*Input params:                                                      */
-	/*Output params:                                                     */
+	/*Input params: n/a                                                  */
+	/*Output params: n/a                                                 */
 	/* ***************************************************************** */
 	void pararAlarme();
 };
