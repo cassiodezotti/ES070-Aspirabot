@@ -13,10 +13,12 @@
 //SensorDistancia sensorEsquerda(1,1);
 //SensorDistancia sensorFrontal(1,1);
 //SensorDistancia sensorDireito(1,1);
-DriverLocomocao motoresLocomocao(5, 6, 10, 11);
-DriverEscovas motoresEscovas(3, 4, 8, 9);
-Encoder encoderRodaDireita(12);
-Encoder encoderRodaEsquerda(13);
+DriverLocomocao motoresLocomocao(5, 6, 10, 11);//cinza e verde nos menores 
+
+//DriverEscovas motoresEscovas(3, 4, 8, 9);
+//Encoder encoderRodaDireita(12);
+//Encoder encoderRodaEsquerda(13);
+
 //DriverBuzzer buzzer(1);
 //DriverLcd lcd(pinosLcd);
 //Bateria bateriaSistema(1,2);
@@ -36,6 +38,8 @@ int  input = 0;
 
 void setup() {
   // put your setup code here, to run once:
+  pinMode(A0, OUTPUT);
+  digitalWrite(A0,HIGH);
   Serial.begin(9600);
   Serial.println("Selecione o teste");
   Serial.println("1. Locomoçao frente");
@@ -48,6 +52,27 @@ void setup() {
 
 void loop() {
 
+ motoresLocomocao.moverFrente();
+ delay(4000);
+ motoresLocomocao.parar();
+ delay(500);
+ motoresLocomocao.virarDireita();
+ delay(1000);
+ motoresLocomocao.parar();
+ delay(500);
+ motoresLocomocao.moverFrente();
+ delay(4000);
+ motoresLocomocao.parar();
+ delay(500);
+ motoresLocomocao.virarEsquerda();
+ delay(1000);
+ motoresLocomocao.parar();
+ delay(500);
+ motoresLocomocao.moverFrente();
+ delay(5000);
+ motoresLocomocao.parar();
+ delay(1000);
+
    if (Serial.available() > 0) {
       // read the incoming byte:
       incomingByte = Serial.read();
@@ -56,24 +81,26 @@ void loop() {
       switch (input) {
         case 1:         // if input=1 ....... motors turn forward
           motoresLocomocao.moverFrente();
+          digitalWrite(A0,LOW);
           Serial.println("forward");
           break;
         case 2:         // if input=2 ....... motors turn backward
           motoresLocomocao.moverTras();
+          digitalWrite(A0,HIGH);
           Serial.println("backward");
           break;
         case 3:         // if input=1 ....... motors turn stop
           motoresLocomocao.parar();
           Serial.println("stop");
           break;
-         case 4:         // if input=1 ....... motors turn stop
-          motoresEscovas.ligaMotores();
-          Serial.println("on brush");
-          break;
-         case 5:         // if input=1 ....... motors turn stop
-          motoresEscovas.desligaMotores();
-          Serial.println("off brush");
-          break;
+//         case 4:         // if input=1 ....... motors turn stop
+//          motoresEscovas.ligaMotores();
+//          Serial.println("on brush");
+//          break;
+//         case 5:         // if input=1 ....... motors turn stop
+//          motoresEscovas.desligaMotores();
+//          Serial.println("off brush");
+//          break;
       }
   
       delay(200);
@@ -98,9 +125,9 @@ void loop() {
   //    Serial.println(rps);
   //
 
-  if (encoderRodaEsquerda.isMoving()) {
-    Serial.print("Andou");
-  }
+//  if (encoderRodaEsquerda.isMoving()) {
+//    Serial.print("Andou");
+//  }
 }
 
 
