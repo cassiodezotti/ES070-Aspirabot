@@ -1,3 +1,4 @@
+
 #include "Encoder.h"
 
 Encoder:: Encoder(byte pino1) {

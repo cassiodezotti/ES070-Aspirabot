@@ -12,13 +12,13 @@
 #ifndef DRIVERLCD_H
 #define DRIVERLCD_H
 #include<Arduino.h>
-#include <LiquidCrystal.h>
+#include <Wire.h> 
+#include <LiquidCrystal_I2C.h>
 
 class DriverLcd {
-private:
-	byte pinos[6];
+  
+LiquidCrystal_I2C lcd = LiquidCrystal_I2C(0x27,16,2);
 public:
-	DriverLcd(byte pinos[6]);
 
 	/* ***************************************************************** */
 	/* Method name:        initLcd                                       */
@@ -31,13 +31,13 @@ public:
 	/* ***************************************************************** */
 	/* Method name:        escreveModo                                   */
 	/* Method description: Write the mode our robot is working           */
-	/*Input params: enum                                                 */
+	/*Input params: modoOperacao                                         */
 	/*Output params:                                                     */
 	/* ***************************************************************** */
-	void escreveModo(); //enum
+	void escreveModo(int modoOperacao); //enum
 
 	/* ***************************************************************** */
-	/* Method name:        escreveBateria                                 */
+	/* Method name:        escrevBateria                                 */
 	/* Method description: Write the current battery level               */
 	/*Input params: batterylevel                                         */
 	/*Output params:                                                     */
@@ -53,13 +53,6 @@ public:
 	/* ***************************************************************** */
 	void escreveAlerta(); //enum
 
-	/* ***************************************************************** */
-	/* Method name:        escreve                                       */
-	/* Method description: Write on LCD screen                           */
-	/*Input params: text                                                 */
-	/*Output params:                                                     */
-	/* ***************************************************************** */
-	void escreve(String text);
 };
 
 #endif /* DRIVERLCD_H */

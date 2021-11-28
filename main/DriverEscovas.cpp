@@ -1,3 +1,4 @@
+
 #include "DriverEscovas.h"
 
 DriverEscovas:: DriverEscovas(byte pino1, byte pino2, byte pino3, byte pino4) {
@@ -36,3 +37,4 @@ void DriverEscovas:: desligaMotores(){
   digitalWrite(pino3, LOW);
   digitalWrite(pino4, LOW);
 }
+

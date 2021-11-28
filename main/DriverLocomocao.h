@@ -1,4 +1,5 @@
 
+
 /* ***************************************************************** */
 /* File name:        driverLocomocao.h                               */
 /* File description: Header file containing the functions/methods for*/
@@ -48,10 +49,10 @@ public:
 
 
   /* ***************************************************************** */
-  /* Method name:        parar                                   */
-  /* Method description: Stop robot                          */
+  /* Method name:        parar                                         */
+  /* Method description: stop robot from moving                        */
   /*Input params:                                                      */
-  /*Output params:                                      */
+  /*Output params:                                                     */
   /* ***************************************************************** */
   void parar();
 
@@ -73,3 +74,4 @@ public:
 };
 
 #endif /* DRIVERLOCOMOCAO_H */
+

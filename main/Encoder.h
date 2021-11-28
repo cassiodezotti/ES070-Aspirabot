@@ -1,4 +1,5 @@
 
+
 /* ***************************************************************** */
 /* File name:        encoder.h                                       */
 /* File description: Header file containing the functions/methods for*/
@@ -33,7 +34,7 @@ public:
 	/*Input params:                                                      */
 	/*Output params: velocity(float)                                     */
 	/* ***************************************************************** */
-  float getVelocity();
+	float getVelocity();
 
   /* ***************************************************************** */
   /* Method name:        isMoving                                      */
@@ -41,7 +42,8 @@ public:
   /*Input params:                                                      */
   /*Output params: Boolean(float)                                      */
   /* ***************************************************************** */
-	boolean isMoving();
+  boolean isMoving();
 };
 
 #endif /* ENCODER_H */
+

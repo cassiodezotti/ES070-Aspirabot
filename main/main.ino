@@ -1,4 +1,5 @@
 
+
 #include "DriverBuzzer.h"
 #include "DriverEscovas.h"
 #include "DriverHG7881.h"
@@ -7,7 +8,9 @@
 #include "Encoder.h"
 #include "SensorDistancia.h"
 
-
+SensorDistancia sensorDireita(2,3);
+SensorDistancia sensorEsquerda(5,6);
+SensorDistancia sensorFrente(8,9);
 //Portas só para ilustrar, o planejamento das portas será feito depois
 //byte pinosLcd[6] = {1,2,3,4,5,6};
 //SensorDistancia sensorEsquerda(1,1);
@@ -36,11 +39,27 @@ float rps = 0;
 int incomingByte = 0;
 int  input = 0;
 
+DriverLcd lcd;
+
 void setup() {
+  
+  Serial.begin(9600);
+
+  pinMode(2,INPUT);
+  pinMode(3,OUTPUT);
+
+  pinMode(5,INPUT);
+  pinMode(6,OUTPUT);
+
+  pinMode(8,INPUT);
+  pinMode(9,OUTPUT);
+
+  pinMode(7,INPUT_PULLUP);
+  lcd.initLcd();
   // put your setup code here, to run once:
   pinMode(A0, OUTPUT);
   digitalWrite(A0,HIGH);
-  Serial.begin(9600);
+  
   Serial.println("Selecione o teste");
   Serial.println("1. Locomoçao frente");
   Serial.println("2. Locomoçao trás");
@@ -51,6 +70,25 @@ void setup() {
 }
 
 void loop() {
+  
+  float distancia1;
+  float distancia2;
+  float distancia3;
+  
+  distancia1 = sensorDireita.getDistance();
+  Serial.print("Sensor Direita: ");
+  Serial.println(distancia1);
+  delay(300);
+
+  distancia2 = sensorEsquerda.getDistance();
+  Serial.print("Sensor Esquerda: ");
+  Serial.println(distancia2);
+  delay(300);
+  
+  distancia3 = sensorFrente.getDistance();
+  Serial.print("Sensor Frente: ");
+  Serial.println(distancia3);
+  delay(300);
 
  motoresLocomocao.moverFrente();
  delay(4000);

@@ -8,12 +8,15 @@ DriverBuzzer:: DriverBuzzer(byte pino) {
 
 
 void DriverBuzzer:: initBuzzer(){
-  pinMode(pino, OUTPUT);
+  pinMode(pino, INPUT_PULLUP);
   
 }
 
 void DriverBuzzer:: tocarAlarme(){
   tone(pino, 1000);
+  delay(1000);
+  tone(pino,3000);
+  delay(1000);
 }
 
 void DriverBuzzer:: pararAlarme(){
