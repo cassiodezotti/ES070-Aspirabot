@@ -1,12 +1,12 @@
 
 /* ***************************************************************** */
-/* File name:        driverLdc.h                                     */
+/* File name:        DriverLdc.h                                     */
 /* File description: Header file containing the functions/methods for*/
 /*                   initializing and using the LCD screen           */
-/* Author name:      André Won, Cassio Dezzoti, Totmés Scheffer,     */
+/* Author name:      Andre Won, Cassio Dezzoti, Totmes Scheffer,     */
 /*                   Guilherme Abreu                                 */
 /* Creation date:    11out2021                                       */
-/* Revision date:    11out2021                                       */
+/* Revision date:    28nov2021                                       */
 /* ***************************************************************** */
 
 #ifndef DRIVERLCD_H
@@ -22,7 +22,8 @@ public:
 
 	/* ***************************************************************** */
 	/* Method name:        initLcd                                       */
-	/* Method description: Initializing LCD screen                       */
+	/* Method description: Initializing the LCD screen and printing      */
+  /*                     welcome message                               */
 	/*Input params:                                                      */
 	/*Output params:                                                     */
 	/* ***************************************************************** */
@@ -35,14 +36,6 @@ public:
 	/*Output params:                                                     */
 	/* ***************************************************************** */
 	void escreveModo(int modoOperacao); //enum
-
-	/* ***************************************************************** */
-	/* Method name:        escrevBateria                                 */
-	/* Method description: Write the current battery level               */
-	/*Input params: batterylevel                                         */
-	/*Output params:                                                     */
-	/* ***************************************************************** */
-	void escreveBateria(int batterylevel);
 
 	/* ***************************************************************** */
 	/* Method name:        escreveAlerta                                 */

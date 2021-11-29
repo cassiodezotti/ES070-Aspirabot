@@ -1,13 +1,12 @@
 
-
 /* ***************************************************************** */
-/* File name:        driverLocomocao.h                               */
+/* File name:        DriverLocomocao.h                               */
 /* File description: Header file containing the functions/methods for*/
 /*                   initializing and using the locomotion           */
-/* Author name:      André Won, Cassio Dezzoti, Totmés Scheffer,     */
+/* Author name:      Andre Won, Cassio Dezzoti, Totmes Scheffer,     */
 /*                   Guilherme Abreu                                 */
 /* Creation date:    11out2021                                       */
-/* Revision date:    11out2021                                       */
+/* Revision date:    28nov2021                                       */
 /* ***************************************************************** */
 
 #ifndef DRIVERLOCOMOCAO_H
@@ -47,7 +46,6 @@ public:
 	/* ***************************************************************** */
 	boolean moverFrente();
 
-
   /* ***************************************************************** */
   /* Method name:        parar                                         */
   /* Method description: stop robot from moving                        */
@@ -74,4 +72,3 @@ public:
 };
 
 #endif /* DRIVERLOCOMOCAO_H */
-

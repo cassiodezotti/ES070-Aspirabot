@@ -1,13 +1,12 @@
 
-
 /* ***************************************************************** */
-/* File name:        encoder.h                                       */
+/* File name:        Encoder.h                                       */
 /* File description: Header file containing the functions/methods for*/
 /*                   initializing and using the encoder              */
-/* Author name:      André Won, Cassio Dezzoti, Totmés Scheffer,     */
+/* Author name:      Andre Won, Cassio Dezzoti, Totmes Scheffer,     */
 /*                   Guilherme Abreu                                 */
 /* Creation date:    11out2021                                       */
-/* Revision date:    11out2021                                       */
+/* Revision date:    28nov2021                                       */
 /* ***************************************************************** */
 
 #ifndef ENCODER_H
@@ -46,4 +45,3 @@ public:
 };
 
 #endif /* ENCODER_H */
-
