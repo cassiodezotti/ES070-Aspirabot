@@ -17,9 +17,10 @@
 
 class DriverLcd {
   
-LiquidCrystal_I2C lcd = LiquidCrystal_I2C(0x27,16,2);
-public:
 
+public:
+LiquidCrystal_I2C lcd = LiquidCrystal_I2C(0x27,16,2);
+DriverLcd( );
 	/* ***************************************************************** */
 	/* Method name:        initLcd                                       */
 	/* Method description: Initializing the LCD screen and printing      */
@@ -44,7 +45,7 @@ public:
 	/*Input params: enum                                                 */
 	/*Output params:                                                     */
 	/* ***************************************************************** */
-	void escreveAlerta(); //enum
+	void escreveAlerta( ); //enum
 
 };
 

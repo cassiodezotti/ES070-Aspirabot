@@ -1,3 +1,5 @@
+
+
 /* ***************************************************************** */
 /* File name:        DriverLcd.cpp                                   */
 /* File description: This file contains the functions/methods for    */
@@ -19,6 +21,13 @@
 /* Input params: n/a                                                 */
 /* Output params: n/a                                                */
 /* ***************************************************************** */
+
+
+
+ DriverLcd:: DriverLcd(){
+  void initLcd();
+}
+
 void DriverLcd:: initLcd(){  
   lcd.init();
   lcd.backlight();
@@ -39,7 +48,7 @@ void DriverLcd:: initLcd(){
 /* Input params: modoOperacao                                        */
 /* Output params: n/a                                                */
 /* ***************************************************************** */
-void DriverLcd:: escreveModo(int modoOperacao){
+void DriverLcd:: escreveModo( int modoOperacao){
   if(modoOperacao == HIGH){
         lcd.setCursor(0, 1);            /* set cursor at bottom left */
         lcd.print("Seguidor Parede");       /* Print message */
@@ -58,8 +67,7 @@ void DriverLcd:: escreveModo(int modoOperacao){
 /* Input params: n/a                                                 */
 /* Output params: n/a                                                */
 /* ***************************************************************** */
-void DriverLcd:: escreveAlerta(){
-  
+void DriverLcd:: escreveAlerta( ){
   lcd.setCursor(0, 1);            /* set cursor at bottom left */
   lcd.print("    ALERTA");       /* Print message */
   delay(500);                    /* delay of 500 miliseconds */

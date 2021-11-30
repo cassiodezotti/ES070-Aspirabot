@@ -1,3 +1,5 @@
+#include <LiquidCrystal_I2C.h>
+
 
 
 #include "DriverBuzzer.h"
@@ -8,72 +10,68 @@
 #include "Encoder.h"
 #include "SensorDistancia.h"
 
-SensorDistancia sensorDireita(2,3);
-SensorDistancia sensorEsquerda(5,6);
-SensorDistancia sensorFrente(8,9);
+SensorDistancia sensorDireita(A0,A1);
+SensorDistancia sensorEsquerda(A2,A3);
+SensorDistancia sensorFrente(A4,A5);
+
 //Portas só para ilustrar, o planejamento das portas será feito depois
 //byte pinosLcd[6] = {1,2,3,4,5,6};
 //SensorDistancia sensorEsquerda(1,1);
 //SensorDistancia sensorFrontal(1,1);
 //SensorDistancia sensorDireito(1,1);
-DriverLocomocao motoresLocomocao(5, 6, 10, 11);//cinza e verde nos menores 
+//DriverLocomocao motoresLocomocao(5, 6, 10, 11);//cinza e verde nos menores 
 
 //DriverEscovas motoresEscovas(3, 4, 8, 9);
 //Encoder encoderRodaDireita(12);
 //Encoder encoderRodaEsquerda(13);
 
 //DriverBuzzer buzzer(1);
-//DriverLcd lcd(pinosLcd);
+DriverLcd lcdScreen;
 //Bateria bateriaSistema(1,2);
 int objetosDetectados = 0;
 float distanciaMin = 0.0;
-int aletaAtual = 0;
-int modoOperacao; //Depois será testado com enum
+int alertaAtual = 0;
+int modoOperacao = 0; //Depois será testado com enum
 unsigned long start_time = 0;
 unsigned long end_time = 0;
 int steps = 0;
 float steps_old = 0;
 float temp = 0;
 float rps = 0;
-
+float distancia1;
+  float distancia2;
+  float distancia3;
 int incomingByte = 0;
 int  input = 0;
 
-DriverLcd lcd;
+
 
 void setup() {
-  
   Serial.begin(9600);
+Serial.println("comecou");
+  pinMode(A0,INPUT);
+  pinMode(A1,OUTPUT);
 
-  pinMode(2,INPUT);
-  pinMode(3,OUTPUT);
+  pinMode(A2,INPUT);
+  pinMode(A3,OUTPUT);
 
-  pinMode(5,INPUT);
-  pinMode(6,OUTPUT);
+  pinMode(A4,INPUT);
+  pinMode(A5,OUTPUT);
 
-  pinMode(8,INPUT);
-  pinMode(9,OUTPUT);
-
-  pinMode(7,INPUT_PULLUP);
-  lcd.initLcd();
-  // put your setup code here, to run once:
-  pinMode(A0, OUTPUT);
-  digitalWrite(A0,HIGH);
   
-  Serial.println("Selecione o teste");
-  Serial.println("1. Locomoçao frente");
-  Serial.println("2. Locomoçao trás");
-  Serial.println("3. Locomoçao parar");
-  Serial.println("4. Escovas ligar");
-  Serial.println("5. Escovas desligar");
+//  pinMode(7,INPUT_PULLUP);
+
+  // put your setup code here, to run once:
+//  pinMode(A0, OUTPUT);
+//  digitalWrite(A0,HIGH);
+  lcdScreen.escreveModo(modoOperacao);
 
 }
 
 void loop() {
   
-  float distancia1;
-  float distancia2;
-  float distancia3;
+  
+Serial.println("comecou");
   
   distancia1 = sensorDireita.getDistance();
   Serial.print("Sensor Direita: ");
@@ -90,47 +88,56 @@ void loop() {
   Serial.println(distancia3);
   delay(300);
 
- motoresLocomocao.moverFrente();
- delay(4000);
- motoresLocomocao.parar();
- delay(500);
- motoresLocomocao.virarDireita();
- delay(1000);
- motoresLocomocao.parar();
- delay(500);
- motoresLocomocao.moverFrente();
- delay(4000);
- motoresLocomocao.parar();
- delay(500);
- motoresLocomocao.virarEsquerda();
- delay(1000);
- motoresLocomocao.parar();
- delay(500);
- motoresLocomocao.moverFrente();
- delay(5000);
- motoresLocomocao.parar();
- delay(1000);
+//   if (alertaAtual == 1) {
+//     lcd.escreveAlerta();
+//     }
+//   else{
+////     modoOperacao = 1;
+//     Serial.println(modoOperacao);
+      // put your main code here, to run repeatedly:
+//     }
 
-   if (Serial.available() > 0) {
-      // read the incoming byte:
-      incomingByte = Serial.read();
-      input = incomingByte - 48; //convert ASCII code of numbers to 1,2,3
-  
-      switch (input) {
-        case 1:         // if input=1 ....... motors turn forward
-          motoresLocomocao.moverFrente();
-          digitalWrite(A0,LOW);
-          Serial.println("forward");
-          break;
-        case 2:         // if input=2 ....... motors turn backward
-          motoresLocomocao.moverTras();
-          digitalWrite(A0,HIGH);
-          Serial.println("backward");
-          break;
-        case 3:         // if input=1 ....... motors turn stop
-          motoresLocomocao.parar();
-          Serial.println("stop");
-          break;
+// motoresLocomocao.moverFrente();
+// delay(4000);
+// motoresLocomocao.parar();
+// delay(500);
+// motoresLocomocao.virarDireita();
+// delay(1000);
+// motoresLocomocao.parar();
+// delay(500);
+// motoresLocomocao.moverFrente();
+// delay(4000);
+// motoresLocomocao.parar();
+// delay(500);
+// motoresLocomocao.virarEsquerda();
+// delay(1000);
+// motoresLocomocao.parar();
+// delay(500);
+// motoresLocomocao.moverFrente();
+// delay(5000);
+// motoresLocomocao.parar();
+// delay(1000);
+//
+//   if (Serial.available() > 0) {
+//      // read the incoming byte:
+//      incomingByte = Serial.read();
+//      input = incomingByte - 48; //convert ASCII code of numbers to 1,2,3
+//  
+//      switch (input) {
+//        case 1:         // if input=1 ....... motors turn forward
+//          motoresLocomocao.moverFrente();
+//          digitalWrite(A0,LOW);
+//          Serial.println("forward");
+//          break;
+//        case 2:         // if input=2 ....... motors turn backward
+//          motoresLocomocao.moverTras();
+//          digitalWrite(A0,HIGH);
+//          Serial.println("backward");
+//          break;
+//        case 3:         // if input=1 ....... motors turn stop
+//          motoresLocomocao.parar();
+//          Serial.println("stop");
+//          break;
 //         case 4:         // if input=1 ....... motors turn stop
 //          motoresEscovas.ligaMotores();
 //          Serial.println("on brush");
@@ -139,11 +146,11 @@ void loop() {
 //          motoresEscovas.desligaMotores();
 //          Serial.println("off brush");
 //          break;
-      }
-  
-      delay(200);
-      input = 0;
-  }
+//      }
+//  
+//      delay(200);
+//      input = 0;
+//  }
 
 
   //start_time=millis();
@@ -170,7 +177,7 @@ void loop() {
 
 
 void iniciarPlaca() {
-
+ 
 }
 
 void modoAleatorio() {
