@@ -18,7 +18,7 @@
 Encoder:: Encoder(byte pino1) {
   this->pino1 = pino1;
 
-  void initEncoder();
+//  void initEncoder();
 }
 
 /* ***************************************************************** */

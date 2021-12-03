@@ -22,7 +22,7 @@ DriverLocomocao:: DriverLocomocao(byte pino1, byte pino2, byte pino3, byte pino4
   this->pino3 = pino3;
   this->pino4 = pino4;
 
-  void initLocomocao();
+//  void initLocomocao();
 }
 
 /* ***************************************************************** */
@@ -51,6 +51,7 @@ void DriverLocomocao:: initLocomocao(){
 /* ***************************************************************** */
 boolean DriverLocomocao:: moverFrente(){
   //toda velocidade
+  Serial.println("Andar Frente");
   analogWrite(pino1, 240); /* setting pino1 as 240 on an analog level */
   analogWrite(pino2, 0); /* setting pino2 as 0 on an analog level */
   analogWrite(pino3, 210); /* setting pino3 as 210 on an analog level */
@@ -66,6 +67,7 @@ boolean DriverLocomocao:: moverFrente(){
 /* Output params: n/a                                                */
 /* ***************************************************************** */
 boolean DriverLocomocao:: moverTras(){
+  Serial.println("Andar Trás");
   analogWrite(pino1, 0); /* setting pino1 as 0 on an analog level */
   analogWrite(pino2, 240); /* setting pino2 as 240 on an analog level */
   analogWrite(pino3, 0); /* setting pino3 as 0 on an analog level */
@@ -81,6 +83,7 @@ boolean DriverLocomocao:: moverTras(){
 /* Output params: n/a                                                */
 /* ***************************************************************** */
 void DriverLocomocao:: parar(){
+  Serial.println("Parar");
   digitalWrite(pino1, LOW); /* setting pino1 as LOW signal */
   digitalWrite(pino2, LOW); /* setting pino2 as LOW signal */
   digitalWrite(pino3, LOW); /* setting pino3 as LOW signal */
@@ -94,12 +97,13 @@ void DriverLocomocao:: parar(){
 /* Input params: n/a                                                 */
 /* Output params: true or false                                      */
 /* ***************************************************************** */
-boolean DriverLocomocao:: virarDireita(){
+void DriverLocomocao:: virarDireita(){
+  Serial.println("Virar Direita");
   analogWrite(pino1, 0); /* setting pino 1 as 0 on an analog level */
   analogWrite(pino2, 0); /* setting pino 2 as 0 on an analog level */
   analogWrite(pino3, 210); /* setting pino 3 as 210 on an analog level */
   analogWrite(pino4, 0); /* setting pino 4 as 0 on an analog level */
-  return false;
+
 }
 
 /* ***************************************************************** */
@@ -108,10 +112,11 @@ boolean DriverLocomocao:: virarDireita(){
 /* Input params: n/a                                                 */
 /* Output params:  true or false                                     */
 /* ***************************************************************** */
-boolean DriverLocomocao:: virarEsquerda(){
+void DriverLocomocao:: virarEsquerda(){
+  Serial.println("Virar Esquerda");
   analogWrite(pino1, 240); /* setting pino 1 as 240 on an analog level */
   analogWrite(pino2, 0); /* setting pino 2 as 0 on an analog level */
   analogWrite(pino3, 0); /* setting pino 3 as 0 on an analog level */
   analogWrite(pino4, 0); /* setting pino 4 as 0 on an analog level */
-  return false;
+
 }

@@ -60,7 +60,7 @@ public:
 	/*Input params:                                                      */
 	/*Output params: true or false                                       */
 	/* ***************************************************************** */
-	boolean virarDireita();
+	void virarDireita();
 
 	/* ***************************************************************** */
 	/* Method name:        virarEsquerda                                 */
@@ -68,7 +68,7 @@ public:
 	/*Input params:                                                      */
 	/*Output params: true or falze                                       */
 	/* ***************************************************************** */
-	boolean virarEsquerda();
+	void virarEsquerda();
 };
 
 #endif /* DRIVERLOCOMOCAO_H */

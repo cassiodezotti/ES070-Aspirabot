@@ -18,7 +18,7 @@
 Bateria:: Bateria(byte pino) {
   this->pino = pino;
 
-  void initLeitorBateria();
+//  void initLeitorBateria();
 }
 
 /* ***************************************************************** */

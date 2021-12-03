@@ -19,7 +19,7 @@
 DriverBuzzer:: DriverBuzzer(byte pino) {
   this->pino = pino;
 
-  void initBuzzer();
+//  void initBuzzer();
 }
 
 /* ***************************************************************** */

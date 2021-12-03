@@ -25,20 +25,21 @@
 
 
  DriverLcd:: DriverLcd(){
-  void initLcd();
+//  void initLcd();
+this->lcd = LiquidCrystal_I2C(0x27,16,2);
 }
 
 void DriverLcd:: initLcd(){  
   lcd.init();
   lcd.backlight();
-  lcd.setCursor(0,0);  /* set cursor at top left */
-  lcd.print("Welcome,"); /* Print message */
-  lcd.setCursor(0,1);    /* set cursor at bottom left */
-  lcd.print("We are Aspirabot!"); /* Print message */
+  lcd.setCursor(0,0);  
+  lcd.print("Welcome,"); 
+  lcd.setCursor(0,1);    
+  lcd.print("We are Aspirabot!"); 
   delay(2000);
   lcd.clear(); 
-  lcd.setCursor(0, 0);            /* set cursor at column 2 e line 1 */
-  lcd.print("Modo:");       /* Print message */
+  lcd.setCursor(0, 0);            
+  lcd.print("Modo:");       
   
 }
 
@@ -50,13 +51,13 @@ void DriverLcd:: initLcd(){
 /* ***************************************************************** */
 void DriverLcd:: escreveModo( int modoOperacao){
   if(modoOperacao == HIGH){
-        lcd.setCursor(0, 1);            /* set cursor at bottom left */
-        lcd.print("Seguidor Parede");       /* Print message */
-        delay(100);                    /* delay of 100 miliseconds */
+        lcd.setCursor(0, 1);            
+        lcd.print("Seguidor Parede");       
+        delay(100);                    
       } else {
-        lcd.setCursor(0, 1);            /* set cursor at bottom left */
-        lcd.print("Aleatorio      ");       /* Print message */
-        delay(100);                    /* delay de 100 miliseconds */
+        lcd.setCursor(0, 1);            
+        lcd.print("Aleatorio      ");       
+        delay(100);                    
       }
 }
 
@@ -67,8 +68,22 @@ void DriverLcd:: escreveModo( int modoOperacao){
 /* Input params: n/a                                                 */
 /* Output params: n/a                                                */
 /* ***************************************************************** */
-void DriverLcd:: escreveAlerta( ){
-  lcd.setCursor(0, 1);            /* set cursor at bottom left */
-  lcd.print("    ALERTA");       /* Print message */
-  delay(500);                    /* delay of 500 miliseconds */
+void DriverLcd:: escreveAlerta(int tipoAlerta){
+  lcd.setCursor(0, 1);   
+  switch(tipoAlerta){
+    case 1:
+        lcd.print("  ALERTA LOOP");      
+        delay(500);     
+        break;
+        break;
+    case 2:
+        lcd.print(" ALERTA BATERIA");      
+        delay(500);     
+        break;
+        break;
+    default:
+        lcd.print("    ALERTA");      
+        delay(500);     
+        break;
+  }               
 }

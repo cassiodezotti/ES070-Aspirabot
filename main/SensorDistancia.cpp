@@ -21,7 +21,7 @@ SensorDistancia:: SensorDistancia(byte pino1, byte pino2) {
   this->pino1 = pino1;
   this->pino2 = pino2;
 
-  void initSensor();
+//  void initSensor();
 }
 
 /* ***************************************************************** */

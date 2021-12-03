@@ -45,7 +45,7 @@ DriverLcd( );
 	/*Input params: enum                                                 */
 	/*Output params:                                                     */
 	/* ***************************************************************** */
-	void escreveAlerta( ); //enum
+	void escreveAlerta(int tipoAlerta); //enum
 
 };
 

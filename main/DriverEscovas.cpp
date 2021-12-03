@@ -22,7 +22,7 @@ DriverEscovas:: DriverEscovas(byte pino1, byte pino2, byte pino3, byte pino4) {
   this->pino3 = pino3;
   this->pino4 = pino4;
 
-  void initEscovas();
+//  void initEscovas();
 }
 
 /* ***************************************************************** */
