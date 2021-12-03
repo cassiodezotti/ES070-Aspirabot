@@ -52,10 +52,10 @@ void DriverLocomocao:: initLocomocao(){
 boolean DriverLocomocao:: moverFrente(){
   //toda velocidade
   Serial.println("Andar Frente");
-  analogWrite(pino1, 240); /* setting pino1 as 240 on an analog level */
-  analogWrite(pino2, 0); /* setting pino2 as 0 on an analog level */
-  analogWrite(pino3, 210); /* setting pino3 as 210 on an analog level */
-  analogWrite(pino4, 0); /* setting pino4 as 0 on an analog level */
+  analogWrite(pino1, 0); /* setting pino1 as 240 on an analog level */
+  analogWrite(pino2, 240); /* setting pino2 as 0 on an analog level */
+  analogWrite(pino3, 0); /* setting pino3 as 210 on an analog level */
+  analogWrite(pino4, 210); /* setting pino4 as 0 on an analog level */
   //falta a parte do encoder
   return false;
 }
@@ -68,10 +68,10 @@ boolean DriverLocomocao:: moverFrente(){
 /* ***************************************************************** */
 boolean DriverLocomocao:: moverTras(){
   Serial.println("Andar Trás");
-  analogWrite(pino1, 0); /* setting pino1 as 0 on an analog level */
-  analogWrite(pino2, 240); /* setting pino2 as 240 on an analog level */
-  analogWrite(pino3, 0); /* setting pino3 as 0 on an analog level */
-  analogWrite(pino4, 210); /* setting pino4 as 210 on an analog level */
+  analogWrite(pino1, 240); /* setting pino1 as 0 on an analog level */
+  analogWrite(pino2, 0); /* setting pino2 as 240 on an analog level */
+  analogWrite(pino3, 210); /* setting pino3 as 0 on an analog level */
+  analogWrite(pino4, 0); /* setting pino4 as 210 on an analog level */
   
   return false;
 }
@@ -99,9 +99,9 @@ void DriverLocomocao:: parar(){
 /* ***************************************************************** */
 void DriverLocomocao:: virarDireita(){
   Serial.println("Virar Direita");
-  analogWrite(pino1, 0); /* setting pino 1 as 0 on an analog level */
+  analogWrite(pino1, 240); /* setting pino 1 as 0 on an analog level */
   analogWrite(pino2, 0); /* setting pino 2 as 0 on an analog level */
-  analogWrite(pino3, 210); /* setting pino 3 as 210 on an analog level */
+  analogWrite(pino3, 0); /* setting pino 3 as 210 on an analog level */
   analogWrite(pino4, 0); /* setting pino 4 as 0 on an analog level */
 
 }
@@ -114,9 +114,9 @@ void DriverLocomocao:: virarDireita(){
 /* ***************************************************************** */
 void DriverLocomocao:: virarEsquerda(){
   Serial.println("Virar Esquerda");
-  analogWrite(pino1, 240); /* setting pino 1 as 240 on an analog level */
+  analogWrite(pino1, 0); /* setting pino 1 as 240 on an analog level */
   analogWrite(pino2, 0); /* setting pino 2 as 0 on an analog level */
   analogWrite(pino3, 0); /* setting pino 3 as 0 on an analog level */
-  analogWrite(pino4, 0); /* setting pino 4 as 0 on an analog level */
+  analogWrite(pino4, 210); /* setting pino 4 as 0 on an analog level */
 
 }
